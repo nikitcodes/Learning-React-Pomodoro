@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 p-0 font-sans antialiased transition-all duration-700;
+  }
+
+  /* --- MODO CLARO (Solido Suave) --- */
+  body:not(.dark) {
+    @apply bg-slate-50 text-slate-900;
+  }
+  
+  /* --- MODO OSCURO (Carbon Mate) --- */
+  body.dark {
+    @apply bg-[#121212] text-white/90;
+  }
+
+  /* Scrollbar Minimalista 'Ghost' adaptada */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.05); /* Muy sutil en claro */
+    border-radius: 10px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.05); /* Muy sutil en oscuro */
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
