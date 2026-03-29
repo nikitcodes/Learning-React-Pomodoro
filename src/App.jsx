@@ -13,20 +13,26 @@ function App() {
 
   return (
     <MainLayout>
-      <div className="w-full flex-1 flex flex-col justify-between max-w-5xl mx-auto py-5">
-        <div>
+      <div className="w-full max-w-6xl mx-auto flex flex-col min-h-full py-4 md:py-8">
+        {/* Header - Siempre arriba */}
+        <div className="w-full mb-8 md:mb-12">
           <Header />
         </div>
 
-        <div className="flex-1 flex flex-col justify-center items-center">
+        {/* Timer - Centro focal */}
+        <div className="flex-1 flex flex-col justify-center items-center py-8 md:py-12">
           <PomodoroTimer />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end w-full px-4 mb-4">
-          <div className="order-2 md:order-1 flex justify-center md:justify-start">
+        {/* Bottom Grid: Spotify & Todo */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 items-end w-full mt-auto pb-10">
+          {/* Spotify: Abajo a la izquierda en Desktop, segundo en Mobile */}
+          <div className="flex justify-center lg:justify-start order-2 lg:order-1">
             <SpotifyPlayer />
           </div>
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+
+          {/* Todo: Abajo a la derecha en Desktop, tercero en Mobile */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
             <TodoList />
           </div>
         </div>

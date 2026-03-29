@@ -6,10 +6,10 @@ export default function SpotifyPlayer() {
   const playlistId = '3m5jM0TdKvCJdO1TywkDtk';
 
   return (
-    <div className="fixed bottom-6 right-6 md:static animate-fade-in w-full max-w-[20rem] md:max-w-md lg:max-w-lg md:mx-auto">
+    <div className="relative animate-fade-in w-full max-w-[20rem] md:max-w-md lg:max-w-lg mx-auto lg:mx-0">
       {/* Contenedor Ghost con Glassmorphism profundo compatible con temas Día/Noche */}
       <div className="bg-slate-100 dark:bg-black/30 backdrop-blur-sm border border-slate-400/55 dark:border-white/10 rounded-[1.5rem] overflow-hidden shadow-sm dark:shadow-none flex flex-col transition-colors duration-500 hover:border-slate-500/50 dark:hover:border-white/15 group">
-        
+
         {/* Cabecera Sutil de Spotify */}
         <div className="flex items-center justify-between px-5 py-3.5 bg-slate-200 dark:bg-white/[0.03] border-b border-slate-400/55 dark:border-white/10 transition-colors duration-500">
           <div className="flex items-center gap-3">
@@ -37,9 +37,9 @@ export default function SpotifyPlayer() {
 
         {/* Pie sutil */}
         <div className="px-5 py-2 bg-slate-200 dark:bg-black/25 text-center transition-colors duration-500">
-           <p className="text-[9px] text-slate-400 dark:text-white/10 uppercase tracking-[0.2em] font-light italic">
-             vibra el momento
-           </p>
+          <p className="text-[9px] text-slate-400 dark:text-white/10 uppercase tracking-[0.2em] font-light italic">
+            vibra el momento
+          </p>
         </div>
       </div>
     </div>

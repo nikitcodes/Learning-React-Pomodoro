@@ -114,7 +114,7 @@ export default function PomodoroTimer() {
       </div>
 
       {/* Temporizador Digital Flotante */}
-      <div className="text-[5.5rem] md:text-[7rem] font-light tracking-[0.08em] text-slate-700 dark:text-white/85 tabular-nums leading-none select-none transition-colors duration-500">
+      <div className="text-6xl md:text-8xl font-light tracking-[0.08em] text-slate-700 dark:text-white/85 tabular-nums leading-none select-none transition-colors duration-500">
         {formateaSegundos(timeLeft)}
       </div>
 
