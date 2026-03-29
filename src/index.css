@@ -4,22 +4,22 @@
 
 @layer base {
   body {
-    @apply m-0 p-0 font-sans antialiased transition-all duration-700;
+    @apply m-0 p-0 font-sans antialiased transition-colors duration-500;
   }
 
   /* --- MODO CLARO (Solido Suave) --- */
   body:not(.dark) {
-    @apply bg-slate-50 text-slate-900;
+    @apply bg-slate-200 text-slate-700;
   }
   
   /* --- MODO OSCURO (Carbon Mate) --- */
   body.dark {
-    @apply bg-[#121212] text-white/90;
+    @apply bg-[#121212] text-white/85;
   }
 
   /* Scrollbar Minimalista 'Ghost' adaptada */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
@@ -34,7 +34,7 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 

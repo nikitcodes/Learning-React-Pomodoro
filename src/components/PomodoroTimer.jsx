@@ -92,62 +92,62 @@ export default function PomodoroTimer() {
     <div className="flex flex-col items-center justify-center animate-fade-in my-4">
 
       {/* Botones selectores de modos */}
-      <div className="flex space-x-6 mb-6">
+      <div className="flex space-x-5 mb-6">
         <button
           onClick={() => switchMode('POMODORO')}
-          className={`text-xs uppercase tracking-widest px-2 py-1 font-light border-b border-transparent transition-all duration-700 ${currentMode === 'POMODORO' ? 'border-black/40 dark:border-white/80 text-black/80 dark:text-white/90' : 'text-black/30 dark:text-white/40 hover:text-black/60 dark:hover:text-white/70'}`}
+          className={`text-[11px] uppercase tracking-[0.2em] px-2 py-1 font-light border-b border-transparent transition-colors duration-300 ${currentMode === 'POMODORO' ? 'border-slate-400/60 dark:border-white/55 text-slate-700 dark:text-white/85' : 'text-slate-500 dark:text-white/35 hover:text-slate-700 dark:hover:text-white/65'}`}
         >
           Pomodoro
         </button>
         <button
           onClick={() => switchMode('SHORT_BREAK')}
-          className={`text-xs uppercase tracking-widest px-2 py-1 font-light border-b border-transparent transition-all duration-700 ${currentMode === 'SHORT_BREAK' ? 'border-black/40 dark:border-white/80 text-black/80 dark:text-white/90' : 'text-black/30 dark:text-white/40 hover:text-black/60 dark:hover:text-white/70'}`}
+          className={`text-[11px] uppercase tracking-[0.2em] px-2 py-1 font-light border-b border-transparent transition-colors duration-300 ${currentMode === 'SHORT_BREAK' ? 'border-slate-400/60 dark:border-white/55 text-slate-700 dark:text-white/85' : 'text-slate-500 dark:text-white/35 hover:text-slate-700 dark:hover:text-white/65'}`}
         >
           Descanso Corto
         </button>
         <button
           onClick={() => switchMode('LONG_BREAK')}
-          className={`text-xs uppercase tracking-widest px-2 py-1 font-light border-b border-transparent transition-all duration-700 ${currentMode === 'LONG_BREAK' ? 'border-black/40 dark:border-white/80 text-black/80 dark:text-white/90' : 'text-black/30 dark:text-white/40 hover:text-black/60 dark:hover:text-white/70'}`}
+          className={`text-[11px] uppercase tracking-[0.2em] px-2 py-1 font-light border-b border-transparent transition-colors duration-300 ${currentMode === 'LONG_BREAK' ? 'border-slate-400/60 dark:border-white/55 text-slate-700 dark:text-white/85' : 'text-slate-500 dark:text-white/35 hover:text-slate-700 dark:hover:text-white/65'}`}
         >
           Descanso Largo
         </button>
       </div>
 
       {/* Temporizador Digital Flotante */}
-      <div className="text-[6rem] md:text-[8rem] font-light tracking-widest text-black/80 dark:text-white/90 drop-shadow-md tabular-nums leading-none select-none transition-colors duration-700">
+      <div className="text-[5.5rem] md:text-[7rem] font-light tracking-[0.08em] text-slate-700 dark:text-white/85 tabular-nums leading-none select-none transition-colors duration-500">
         {formateaSegundos(timeLeft)}
       </div>
 
       {/* Botones de control principal (Iniciar, Pausar, Reiniciar) */}
-      <div className="flex gap-10 mt-6">
+      <div className="flex gap-8 mt-6">
         <button
           onClick={toggleTimer}
-          className="text-black/60 dark:text-white/80 hover:text-black dark:hover:text-white uppercase tracking-widest text-sm font-light transition-all pb-1 border-b border-transparent hover:border-black/30 dark:hover:border-white/50"
+          className="text-slate-600 dark:text-white/75 hover:text-slate-800 dark:hover:text-white uppercase tracking-[0.2em] text-xs font-light transition-colors pb-1 border-b border-transparent hover:border-slate-400/60 dark:hover:border-white/35"
         >
           {isActive ? 'Pausar' : 'Iniciar'}
         </button>
         <button
           onClick={resetTimer}
-          className="text-black/30 dark:text-white/40 hover:text-black/60 dark:hover:text-white/80 uppercase tracking-widest text-sm font-light transition-all pb-1 border-b border-transparent hover:border-black/30 dark:hover:border-white/50"
+          className="text-slate-500 dark:text-white/35 hover:text-slate-700 dark:hover:text-white/65 uppercase tracking-[0.2em] text-xs font-light transition-colors pb-1 border-b border-transparent hover:border-slate-400/60 dark:hover:border-white/35"
         >
           Reiniciar
         </button>
       </div>
 
       {/* Input de minutos personalizados */}
-      <form onSubmit={setCustomTime} className="mt-8 flex items-center bg-black/5 dark:bg-white/5 backdrop-blur-md px-5 py-2 border border-black/5 dark:border-white/10 rounded-full shadow-lg hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-700">
+      <form onSubmit={setCustomTime} className="mt-8 flex items-center bg-slate-100/80 dark:bg-white/[0.03] px-4 py-2 border border-slate-300/60 dark:border-white/10 rounded-full hover:bg-slate-200/70 dark:hover:bg-white/[0.06] transition-colors duration-300">
         <input
           type="number"
           value={customMinutes}
           onChange={(e) => setCustomMinutes(e.target.value)}
           placeholder="Minutos..."
           min="1"
-          className="bg-transparent border-none outline-none text-black/70 dark:text-white/90 placeholder-black/20 dark:placeholder-white/40 text-xs tracking-wider w-24 text-center disabled:opacity-50 font-light"
+          className="bg-transparent border-none outline-none text-slate-700 dark:text-white/85 placeholder-slate-400 dark:placeholder-white/35 text-xs tracking-[0.12em] w-24 text-center disabled:opacity-50 font-light"
         />
-        <div className="w-px h-4 bg-black/10 dark:bg-white/20 mx-3"></div>
+        <div className="w-px h-4 bg-slate-300/70 dark:bg-white/20 mx-3"></div>
         <button
           type="submit"
-          className="text-xs uppercase tracking-widest text-black/40 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors"
+          className="text-[10px] uppercase tracking-[0.2em] text-slate-500 dark:text-white/55 hover:text-slate-700 dark:hover:text-white transition-colors"
         >
           Set
         </button>

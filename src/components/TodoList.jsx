@@ -51,21 +51,21 @@ export default function TodoList() {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto animate-fade-in mt-4 bg-white/70 dark:bg-black/40 backdrop-blur-xl rounded-[2rem] p-6 border border-slate-200 dark:border-white/5 shadow-xl dark:shadow-2xl flex flex-col transition-all duration-700">
+    <div className="w-full max-w-md mx-auto animate-fade-in mt-4 bg-slate-100 dark:bg-black/30 backdrop-blur-sm rounded-[1.5rem] p-5 border border-slate-400/55 dark:border-white/10 shadow-sm dark:shadow-none flex flex-col transition-colors duration-500">
       
       {/* Cabecera del Todo con Limpieza */}
-      <div className="flex justify-between items-center mb-6 px-1">
-        <h3 className="text-slate-400 dark:text-white/40 tracking-[0.3em] text-[10px] uppercase font-light transition-colors duration-700">Ecos de Tareas</h3>
+      <div className="flex justify-between items-center mb-5 px-1">
+        <h3 className="text-slate-600 dark:text-white/40 tracking-[0.22em] text-[10px] uppercase font-light transition-colors duration-500">Ecos de Tareas</h3>
         <button 
           onClick={clearCompleted}
-          className="text-[9px] uppercase tracking-widest text-slate-300 dark:text-white/20 hover:text-rose-500/60 transition-colors"
+          className="text-[9px] uppercase tracking-[0.16em] text-slate-500 dark:text-white/25 hover:text-rose-500/60 transition-colors"
         >
           Limpiar completadas
         </button>
       </div>
       
       {/* Selector de prioridad y campo de entrada */}
-      <form onSubmit={addTask} className="mb-8 space-y-4">
+      <form onSubmit={addTask} className="mb-6 space-y-3">
         <div className="flex items-center gap-2 px-2">
           <button type="button" onClick={() => setPriority('low')} className={`w-2 h-2 rounded-full transition-all ${priority === 'low' ? 'bg-sky-500 scale-125' : 'bg-sky-500/20'}`} title="Baja" />
           <button type="button" onClick={() => setPriority('normal')} className={`w-2 h-2 rounded-full transition-all ${priority === 'normal' ? 'bg-amber-500 scale-125' : 'bg-amber-500/20'}`} title="Normal" />
@@ -75,14 +75,14 @@ export default function TodoList() {
             value={newTaskText}
             onChange={(e) => setNewTaskText(e.target.value)}
             placeholder="Danza una idea aquí..."
-            className="flex-1 bg-transparent border-none outline-none text-slate-800 dark:text-white/90 text-sm font-light placeholder-slate-300 dark:placeholder-white/20 ml-2 transition-colors duration-700"
+            className="flex-1 bg-transparent border-none outline-none text-slate-700 dark:text-white/85 text-sm font-light placeholder-slate-400 dark:placeholder-white/25 ml-2 transition-colors duration-500"
           />
         </div>
-        <div className="h-[1px] w-full bg-slate-100 dark:bg-white/10 transition-colors duration-700" />
+        <div className="h-px w-full bg-slate-400/50 dark:bg-white/10 transition-colors duration-500" />
       </form>
 
       {/* --- LISTA CON ALTURA MÁXIMA Y SCROLL INTERNO (CORRECCIÓN UX) --- */}
-      <ul className="space-y-4 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin">
+      <ul className="space-y-3 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin">
         {tasks.map(task => (
           <li key={task.id} className="group flex items-center justify-between text-sm font-light animate-fade-in">
             <div 
@@ -92,14 +92,14 @@ export default function TodoList() {
               {/* Indicador de prioridad estético */}
               <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors duration-700 ${getPriorityColor(task.priority)}`} />
               
-              <span className={`transition-all duration-700 truncate tracking-wide ${task.completed ? 'line-through text-slate-300 dark:text-white/20 grayscale opacity-40' : 'text-slate-700 dark:text-white/80'}`}>
+              <span className={`transition-colors duration-500 truncate ${task.completed ? 'line-through text-slate-400 dark:text-white/20 opacity-50' : 'text-slate-700 dark:text-white/80'}`}>
                 {task.text}
               </span>
             </div>
             
             <button 
               onClick={() => deleteTask(task.id)}
-              className="opacity-0 group-hover:opacity-100 text-slate-300 dark:text-white/10 hover:text-rose-500 border-none bg-transparent transition-all"
+              className="opacity-0 group-hover:opacity-100 text-slate-400 dark:text-white/15 hover:text-rose-500 border-none bg-transparent transition-opacity"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
@@ -108,7 +108,7 @@ export default function TodoList() {
           </li>
         ))}
         {tasks.length === 0 && (
-          <p className="text-center py-4 text-[10px] text-slate-300 dark:text-white/10 uppercase tracking-widest font-light italic">
+          <p className="text-center py-4 text-[10px] text-slate-500 dark:text-white/10 uppercase tracking-widest font-light italic">
             silencio... no hay tareas pendientes
           </p>
         )}
