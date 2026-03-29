@@ -1,16 +1,21 @@
-# React + Vite
+# Focus-Flow: Laboratorio de Desarrollo con IA 🌙
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un ejercicio práctico de **Ingeniería Informática** enfocado en el **Desarrollo Asistido por Inteligencia Artificial**. 
 
-Currently, two official plugins are available:
+## 🤖 Declaración de Autoría y Herramientas
+Este repositorio no pretende ser un desarrollo de código "desde cero" manual, sino un experimento técnico utilizando herramientas de generación de código de última generación:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Prompt Engineering & Arquitectura:** Arturo (Yo). Definí la visión del producto, la lógica de los ciclos Pomodoro, la estética minimalista y la integración de funcionalidades.
+* **Generación de Código:** Realizada mediante **Antigravity** (IA), siguiendo mis instrucciones y prompts específicos para construir componentes en **React**.
+* **Estilos:** Implementados con **Tailwind CSS**, optimizados por IA para lograr un diseño "Glassmorphism" y nocturno.
 
-## React Compiler
+## 🚀 ¿Por qué este proyecto?
+Como estudiante en la **PUCP**, mi objetivo con este repositorio es entender cómo las herramientas de IA pueden acelerar el ciclo de vida del software y cómo un desarrollador debe actuar como "arquitecto" de código generado automáticamente.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Funcionalidades Implementadas:
+* **Pomodoro Engine:** Temporizador con estados dinámicos (Trabajo/Descanso).
+* **Music Hub:** Integración de búsqueda y reproducción de audio vía YouTube/Spotify.
+* **Task Manager:** Lista de tareas minimalista con persistencia visual.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+*Este es un proyecto de aprendizaje personal. El código ha sido revisado y ajustado para entender el flujo de datos en React.*
